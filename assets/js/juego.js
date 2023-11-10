@@ -4,6 +4,12 @@ let baraja = [];
 const tiposCartas = ['C', 'D', 'H', 'S'];
 const cartasEspeciales = ['A', 'J', 'Q', 'K'];
 
+let puntosJugador = 0, puntosComputadora = 0;
+
+// Referencias del HTML
+const btnPedirCarta = document.querySelector('#btnPedirCarta');
+const puntajeJugadorPantalla = document.querySelectorAll('small');
+
 const crearBaraja = () => {
 
     for (let i = 2; i <= 10; i++) {
@@ -20,7 +26,7 @@ const crearBaraja = () => {
 
     // console.log(baraja);
     baraja = _.shuffle(baraja);
-    console.log(`mi baraja: ${baraja}`);
+    console.log('mi baraja:', baraja);
 
     return baraja;
 }
@@ -81,5 +87,15 @@ const valorCarta = (carta) => {
 
 }
 
-valorCarta(perdirCarta());
+// valorCarta(perdirCarta());
 
+// Eventos
+
+btnPedirCarta.addEventListener('click', () => {
+
+    const carta = perdirCarta();    
+    puntosJugador = puntosJugador + valorCarta(carta);
+    
+    puntajeJugadorPantalla[0].innerText = puntosJugador;
+
+});
