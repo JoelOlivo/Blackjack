@@ -54,5 +54,32 @@ const perdirCarta = () => {
 }
 
 // perdirCarta();
+
+const valorCarta = (carta) => {
     
+    // const valor = carta.substring(0, carta.length - 1);  // 'substring' retorna un string cortado en base a una posicion inicial y final
+    // let puntos = 0;
+    // console.log({valor});
+
+    // if (isNaN(valor)) {  // 'isNaN' is not a number, retorna un true si no es un numero
+    //     console.log('no es numero');
+    //     puntos = (valor === 'A') ? 11 : 10;
+    //     console.log(puntos);
+    // } else {
+    //     console.log('numero xd');
+    //     puntos = valor * 1; // se multiplica para obtener un numero (no un string)
+    //     console.log(puntos);
+    // }
+
+    const valor = carta.substring(0, carta.length - 1);
+    console.log({valor});
+
+    puntos = (isNaN(valor)) ? puntos = (valor === 'A') ? 11 : 10 : puntos = valor * 1; 
+    console.log({puntos});
+    return puntos;
+
+
+}
+
+valorCarta(perdirCarta());
 
