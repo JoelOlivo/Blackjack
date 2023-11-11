@@ -16,8 +16,8 @@
         <div id="divBotones" class="row mt-2">
             <div class="col text-center">
                 <button id="btnNuevoJuego" class="btn btn-danger">Nuevo juego</button>
-                <button id="btnPedirCarta" class="btn btn-primary">Pedir Carta</button>
-                <button id="btnDetener" class="btn btn-primary">Detener</button>
+                <button id="btnPedirCarta" disabled = 'disabled' class="btn btn-primary">Pedir Carta</button>
+                <button id="btnDetener" disabled = 'disabled' class="btn btn-primary">Detener</button>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
     <div class="row container">
         <div class="col">
             <h1>Jugador - <small>0</small></h1>
-            <div id="jugador-cartas">
+            <div id="jugador-cartas" class="divCartas">
                 <!-- <img class="carta" src="assets/cartas/10C.png" alt="carta"> -->
             </div>
         </div>
@@ -34,13 +34,22 @@
     <div class="row container mt-2">
         <div class="col">
             <h1>Computador - <small>0</small></h1>
-            <div id="computadora-cartas">
+            <div id="computadora-cartas" class="divCartas">
                 <!-- <img class="carta" src="assets/cartas/10C.png" alt="carta"> -->
             </div>
         </div>
     </div>
 
     <script src="assets/js/underscore-min.js"></script>
-    <script src="assets/js/juego.js"></script>
+    <!-- <script src="assets/js/juego.js"></script> -->
+    <script src="assets/js/juego-min.js"></script>
+
+    <script>
+       console.log(miModulo);
+       
+       document.querySelector('#btnNuevoJuego').addEventListener('click', () => {
+           miModulo.nuevoJuego();
+       });
+    </script>
 </body>
 </html>
